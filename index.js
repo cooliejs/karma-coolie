@@ -1,4 +1,4 @@
-var seajsPath, createPattern,
+var cooliejsPath, createPattern,
     path = require('path');
 
 createPattern = function(path) {
@@ -10,15 +10,15 @@ createPattern = function(path) {
     };
 };
 
-seajsPath = path.join(path.dirname(require.resolve('seajs')), '..', 'dist', 'sea-debug.js');
+cooliejsPath = path.resolve('./node_modules/coolie/coolie.js');
 
 var initRequireJs = function(files) {
     files.unshift(createPattern(__dirname + '/adapter.js'));
-    files.unshift(createPattern(seajsPath));
+    files.unshift(createPattern(cooliejsPath));
 };
 
 initRequireJs.$inject = ['config.files'];
 
 module.exports = {
-    'framework:seajs': ['factory', initRequireJs]
+    'framework:coolie': ['factory', initRequireJs]
 };

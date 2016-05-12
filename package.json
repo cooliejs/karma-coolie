@@ -1,27 +1,28 @@
 {
-  "name": "karma-seajs",
-  "version": "0.1.1",
-  "description": "A Karma plugin, Adapter for seajs",
+  "name": "karma-coolie",
+  "version": "0.0.1",
+  "description": "A Karma plugin, Adapter for coolie.js",
   "main": "index.js",
-  "scripts": {
-    "test": "node node_modules/gulp/bin/gulp test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/gsmlg/karma-seajs"
+    "url": "git://github.com/erguotou520/karma-coolie"
   },
   "keywords": [
     "karam-plugin",
     "karma-adapter",
-    "seajs"
+    "karma-framework",
+    "karma-coolie",
+    "coolie.js",
+    "coolie"
   ],
-  "author": "gsmlg",
-  "license": "ISC",
+  "author": "erguotou520",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gsmlg/karma-seajs/issues"
+    "url": "https://github.com/erguotou520/karma-coolie/issues"
   },
-  "homepage": "https://github.com/gsmlg/karma-seajs",
+  "homepage": "https://github.com/erguotou520/karma-coolie",
   "dependencies": {
-    "seajs": "^2.3.0"
+    "coolie": "github:cooliejs/coolie.js"
   }
 }
