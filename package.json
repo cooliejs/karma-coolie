@@ -1,30 +1,15 @@
 {
-  "name": "karma-coolie",
+  "name": "karma-coolie-demo",
   "version": "0.1.0",
-  "description": "A Karma plugin, adapter for coolie.js",
-  "main": "index.js",
   "scripts": {
-    "demo": "karma start"
+    "start": "karma start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/cooliejs/karma-coolie"
-  },
-  "keywords": [
-    "karam-plugin",
-    "karma-adapter",
-    "karma-framework",
-    "karma-coolie",
-    "coolie.js",
-    "coolie"
-  ],
   "author": "erguotou525@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cooliejs/karma-coolie/issues"
-  },
-  "homepage": "https://github.com/cooliejs/karma-coolie",
   "devDependencies": {
-    "coolie.js": "^1.4.4"
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coolie": "^0.1.0",
+    "karma-jasmine": "^1.0.2"
   }
 }
