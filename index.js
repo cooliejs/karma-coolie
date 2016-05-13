@@ -10,15 +10,15 @@ createPattern = function (path) {
   };
 };
 
-cooliejsPath = path.resolve('coolie.js');
+cooliejsPath = path.resolve(__dirname, './node_modules/coolie.js/coolie.js');
 
-var initRequireJs = function (files) {
+var initCoolieJs = function (files) {
   files.unshift(createPattern(__dirname + '/adapter.js'));
   files.unshift(createPattern(cooliejsPath));
 };
 
-initRequireJs.$inject = ['config.files'];
+initCoolieJs.$inject = ['config.files'];
 
 module.exports = {
-  'framework:coolie': ['factory', initRequireJs]
+  'framework:coolie': ['factory', initCoolieJs]
 };
