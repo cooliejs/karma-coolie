@@ -22,7 +22,7 @@ test
 * Add `test` files to `files` but not included
 * Add `test/test-main.js` to `files`
 
-```json
+```
 {
   frameworks: ['jasmine', 'coolie'],
   files: [
@@ -102,3 +102,6 @@ Now start to run test:
 ```shell
 karma start
 ```
+
+### Demo
+You can see [demo here](https://github.com/cooliejs/karma-coolie/tree/demo)
