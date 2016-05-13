@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/erguotou520/karma-coolie"
+    "url": "git://github.com/cooliejs/karma-coolie"
   },
   "keywords": [
     "karam-plugin",
@@ -18,12 +18,12 @@
     "coolie.js",
     "coolie"
   ],
-  "author": "erguotou520",
+  "author": "erguotou525@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/erguotou520/karma-coolie/issues"
+    "url": "https://github.com/cooliejs/karma-coolie/issues"
   },
-  "homepage": "https://github.com/erguotou520/karma-coolie",
+  "homepage": "https://github.com/cooliejs/karma-coolie",
   "devDependencies": {
     "coolie.js": "^1.4.4"
   }
