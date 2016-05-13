@@ -1,54 +1,104 @@
-karma-seajs
+karma-coolie
 ================
-install
-```
-npm install --save-dev karma-seajs
+### Install
+```shell
+npm install --save-dev karma-jasmine karma-coolie
 ```
 
-settings in karma conf
+### Dir tree
 ```
+src
+├─circle.js
+└─square.js
+test
+├─circle.spec.js
+├─square.spec.js
+└─test-main.js
+```
+
+### Karma settings
+* Add `coolie` framwork to `karma.config.js`.
+* Add `src` files to `files` but not included
+* Add `test` files to `files` but not included
+* Add `test/test-main.js` to `files`
+
+```json
 {
-  frameworks: ['jasmine', 'seajs'],
+  frameworks: ['jasmine', 'coolie'],
   files: [
-    {pattern: 'vendor/**/*.js', included: false, watched: false},
-    {pattern: 'src/**/*.js', included: false},
-    {pattern: 'test/**/*spec.js', included: false},
-    'test/test-main.js'
-  ]
+		{pattern: 'src/*.js', included: false},
+		{pattern: 'test/*.spec.js', included: false},
+		'test/test-main.js'
+	]
 }
 ```
 
-test-main.js
-```
-(function(__karma__, seajs) {
-    var tests = [],
-        file;
-    var alias = {
-        "jquery": "/base/vendor/jquery",
-        "underscore": "/base/vendor/underscore",
-        "backbone": "/base/vendor/backbone",
-        "d3": "/base/vendor/d3"
-    };
-    for (file in __karma__.files) {
-        if (__karma__.files.hasOwnProperty(file)) {
-            if (/spec\.js$/i.test(file)) {
-                tests.push(file);
-            }
-            if (/\/src\//.test(file)) {
-                var name = file.match(/\/src\/([^.]+)\.js/)[1];
-                alias[name] = file;
-            }
-        }
-    }
-    seajs.config({
-        base: '/base/src',
-        alias: alias
-    });
-    var __start = __karma__.start;
-    __karma__.start = function() {};
-    seajs.use(tests, function() {
-        __start.call();
-    });
-})(window.__karma__, seajs);
+### Test files
+Follow the official [demo](http://frontenddev.org/article/follow-me-coolie-six-modules-of-unit-tests.html), write your src code `/src/circle.js` and `/src/square.js`. But the `spec` test files get some different.
 
+The `/test/circle.spec.js`:
+```js
+define(function (require) {
+  var circle = require('../src/circle.js');
+  describe('circle.js', function () {
+
+      // 圆面积
+      it('.getArea', function () {
+          // 半径为 1 的圆
+          expect(circle.getArea(1)).toEqual(Math.PI);
+      });
+
+      // 圆周长
+      it('.getCircumference', function () {
+          // 半径为 1 的圆
+          expect(circle.getCircumference(1)).toEqual(2 * Math.PI);
+      });
+  });
+});
+```
+And `/test/square.spec.js`:
+```js
+define(function (require) {
+  var square = require('../src/square.js')
+  describe('square.js', function () {
+
+      // 方形面积
+      it('.getArea', function () {
+          // 边长为 1 的正方形
+          expect(square.getArea(1, 1)).toEqual(1);
+      });
+
+      //// 方形周长
+      //it('.getCircumference', function () {
+      //    // 边长为 1 的正方形
+      //    expect(square.getCircumference(1, 1)).toEqual(4);
+      //});
+  });
+
+});
+```
+
+Finnaly the `/test/test-main.js` looks like:
+```js
+(function(__karma__, coolie) {
+  var tests = [],
+    file;
+  for (file in __karma__.files) {
+    if (__karma__.files.hasOwnProperty(file)) {
+      // just include .spec test files
+      if (/\.spec\.js$/i.test(file)) {
+        tests.push(file);
+      }
+    }
+  }
+
+  coolie.use(test);
+
+})(window.__karma__, coolie);
+```
+
+### Test
+Now start to run test:
+```shell
+karma start
 ```

@@ -1,9 +1,13 @@
-(function(karma, requirejs, locationPathname) {
+(function(karma, coolie) {
 
-// monkey patch coolie.js
+  // set coolie base path
+  coolie.config({
+      base: coolie.resolvePath(coolie.dirname, '../../')
+  });
 
+  coolie.callback(karma.start);
 
-// make it async
-karma.loaded = function() {};
+  // make it async
+  karma.loaded = function() {};
 
-})(window.__karma__, window.coolie, window.location.pathname);
+})(window.__karma__, window.coolie);

@@ -1,9 +1,11 @@
 {
   "name": "karma-coolie",
-  "version": "0.0.1",
-  "description": "A Karma plugin, Adapter for coolie.js",
+  "version": "0.1.0",
+  "description": "A Karma plugin, adapter for coolie.js",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "demo": "karma start"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/erguotou520/karma-coolie"
@@ -22,7 +24,7 @@
     "url": "https://github.com/erguotou520/karma-coolie/issues"
   },
   "homepage": "https://github.com/erguotou520/karma-coolie",
-  "dependencies": {
-    "coolie": "github:cooliejs/coolie.js"
+  "devDependencies": {
+    "coolie.js": "^1.4.4"
   }
 }

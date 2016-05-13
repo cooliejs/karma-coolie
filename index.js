@@ -10,7 +10,7 @@ createPattern = function(path) {
     };
 };
 
-cooliejsPath = path.resolve('./node_modules/coolie/coolie.js');
+cooliejsPath = path.resolve('coolie.js');
 
 var initRequireJs = function(files) {
     files.unshift(createPattern(__dirname + '/adapter.js'));
