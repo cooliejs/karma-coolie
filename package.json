@@ -17,6 +17,9 @@
   ],
   "author": "erguotou525@gmail.com",
   "license": "MIT",
+  "contributors": [
+    "#云淡然 <cloudcome@163.com>"
+  ],
   "bugs": {
     "url": "https://github.com/cooliejs/karma-coolie/issues"
   },
