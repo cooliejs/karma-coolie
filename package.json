@@ -1,11 +1,8 @@
 {
   "name": "karma-coolie",
-  "version": "0.1.1",
-  "description": "A Karma plugin, adapter for coolie.js",
+  "version": "0.1.2",
+  "description": "A Karma adapter for coolie.js",
   "main": "index.js",
-  "scripts": {
-    "demo": "karma start"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/cooliejs/karma-coolie"

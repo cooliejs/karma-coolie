@@ -2,7 +2,7 @@ karma-coolie
 ================
 ### Install
 ```shell
-npm install --save-dev karma-jasmine karma-coolie
+npm install --save-dev karma karma-jasmine jasmine-core karma-coolie karma-chrome-launcher
 ```
 
 ### Dir tree
@@ -17,7 +17,7 @@ test
 ```
 
 ### Karma settings
-* Add `coolie` framwork to `karma.config.js`.
+* Add `coolie` framework to `karma.config.js`
 * Add `src` files to `files` but not included
 * Add `test` files to `files` but not included
 * Add `test/test-main.js` to `files`
@@ -78,7 +78,7 @@ define(function (require) {
 });
 ```
 
-Finnaly the `/test/test-main.js` looks like:
+Finally the `/test/test-main.js` looks like:
 ```js
 (function(__karma__, coolie) {
   var tests = [],
@@ -92,7 +92,7 @@ Finnaly the `/test/test-main.js` looks like:
     }
   }
 
-  coolie.use(test);
+  coolie.use(tests);
 
 })(window.__karma__, coolie);
 ```

@@ -5,10 +5,14 @@
     base: coolie.resolvePath(coolie.dirname, '../../')
   });
 
-  coolie.callback(karma.start);
+
+  coolie.callback(function () {
+    karma.start.call();
+  });
 
   // make it async
   karma.loaded = function () {
   };
+
 
 })(window.__karma__, window.coolie);
