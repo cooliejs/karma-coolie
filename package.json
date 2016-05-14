@@ -1,6 +1,6 @@
 {
   "name": "karma-coolie",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Karma adapter for coolie.js",
   "main": "index.js",
   "repository": {
@@ -23,6 +23,9 @@
   "homepage": "https://github.com/cooliejs/karma-coolie",
   "devDependencies": {},
   "dependencies": {
-    "coolie.js": "^1.4.6"
+    "coolie.js": "^1.4.7"
+  },
+  "peerDependencies": {
+    "karma": ">=0.9"
   }
 }
