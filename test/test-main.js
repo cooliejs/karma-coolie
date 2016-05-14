@@ -10,8 +10,6 @@
     }
   }
 
-  tests.forEach(function (test) {
-    coolie.use(test);
-  });
+  coolie.use(tests);
 
 })(window.__karma__, coolie);
