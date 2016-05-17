@@ -1,5 +1,5 @@
 var cooliejsPath, createPattern,
-  path = require('path');
+    path = require('path');
 
 createPattern = function (path) {
   return {

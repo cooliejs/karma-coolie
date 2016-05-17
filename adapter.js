@@ -2,17 +2,13 @@
 
   // set coolie base path
   coolie.config({
-    base: coolie.resolvePath(coolie.dirname, '../../')
-  });
-
-
-  coolie.callback(function () {
-    karma.start.call();
+    baseDir: coolie.resolvePath(coolie.dirname, '../../'),
+    nodeModulesDir: coolie.resolvePath(coolie.dirname, '../../../')
   });
 
   // make it async
   karma.loaded = function () {
+    // ignore
   };
-
 
 })(window.__karma__, window.coolie);
