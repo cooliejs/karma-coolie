@@ -25,9 +25,10 @@
   },
   "homepage": "https://github.com/cooliejs/karma-coolie",
   "devDependencies": {},
-  "dependencies": {},
+  "dependencies": {
+    "coolie.js": "^2.0.0-alpha2"
+  },
   "peerDependencies": {
-    "coolie.js": "2.x",
     "karma": ">=0.9"
   }
 }
