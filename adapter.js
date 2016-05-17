@@ -1,14 +1,23 @@
 (function (karma, coolie) {
+  'use strict';
+
+  for (var foundCoolieFile in karma.files) {
+    if (/\/coolie\.js$/.test(foundCoolieFile)) {
+      break;
+    }
+  }
+
+  var nodeModulesDir = foundCoolieFile.match(/^.*?\/node_modules\//)[0];
+  var baseDir = coolie.resolvePath(nodeModulesDir, '../');
 
   // set coolie base path
   coolie.config({
-    baseDir: coolie.resolvePath(coolie.dirname, '../../'),
-    nodeModulesDir: coolie.resolvePath(coolie.dirname, '../../../')
+    baseDir: baseDir,
+    nodeModulesDir: nodeModulesDir
   });
 
   // make it async
   karma.loaded = function () {
     // ignore
   };
-
 })(window.__karma__, window.coolie);
