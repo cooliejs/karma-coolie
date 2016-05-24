@@ -8,11 +8,13 @@
   }
 
   var nodeModulesDir = foundCoolieFile.match(/^.*?\/node_modules\//)[0];
-  var baseDir = coolie.resolvePath(nodeModulesDir, '../');
+  var mainModulesDir = coolie.resolvePath(nodeModulesDir, '../');
 
-  // set coolie base path
+  // coolie config
   coolie.config({
-    baseDir: baseDir,
+    base: mainModulesDir,
+    baseDir: mainModulesDir,
+    mainModulesDir: mainModulesDir,
     nodeModulesDir: nodeModulesDir
   });
 
